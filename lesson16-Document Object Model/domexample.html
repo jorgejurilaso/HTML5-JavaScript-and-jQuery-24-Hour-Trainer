@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">   
+</head>
+ 
+<style>
+ol {
+display:none;
+}
+</style>
+
+
+<body>
+    <h1 class="mainHeader">This is the title</h1>
+    <ol id="daysOfWeek">
+        <li>Monday
+        <li>Tuesday
+        <li>Wednesday
+        <li>Thursday
+        <li>Friday
+    </ol>
+</body>
+<script>
+
+document.getElementsByClassName('mainHeader')[0]
+.addEventListener("mouseenter", function(event) {
+document.getElementById('daysOfWeek').style.display = 'block';
+});
+document.getElementsByClassName('mainHeader')[0]
+.addEventListener("mouseleave", function(event) {
+document.getElementById('daysOfWeek').style.display = 'none';
+});
+</script>
+
+</script>
+</html>
+
+<!-- 
+Test HTML
+document.getElementById('daysOfWeek');            // imprime     <ol id="daysOfWeek"> ...
+document.getElementById('daysOfWeek').nodeType;  // 1
+document.getElementById('daysOfWeek').nodeName;  // 1
+document.getElementsByClassName('mainHeader');   //HTMLCollection [h1.mainHeader]
+document.getElementsByTagName('li')  // HTMLCollection(5) [li, li, li, li, li]
+document.getElementsByTagName('ol')[0].nodeName         //"OL"
+
+> Traversing the DOM
+o = document.getElementById('daysOfWeek');
+o.childNodes   // NodeList(6) [text, li, li, li, li, li]
+o.firstElementChild  // Monday
+document.body        
+
+> Manipulating the DOM
+newLi = document.createElement('li');
+saturday = document.createTextNode("Saturday");
+newLi.appendChild(saturday);
+document.getElementById('daysOfWeek').appendChild(newLi);
+-->
